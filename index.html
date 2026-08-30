@@ -32,12 +32,13 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
 
+        /* SINGLE GLOBAL BACKGROUND ACROSS ENTIRE PAGE */
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: var(--dark);
             background-image: 
-                linear-gradient(180deg, rgba(7, 7, 9, 0.75) 0%, rgba(10, 9, 14, 0.85) 40%, rgba(7, 7, 9, 0.92) 100%),
-                url('balloon.jpg'), url('balloon.jpg.jpg');
+                linear-gradient(180deg, rgba(7, 7, 9, 0.82) 0%, rgba(10, 9, 14, 0.88) 40%, rgba(7, 7, 9, 0.95) 100%),
+                url('balloon.jpg.jpg'), url('balloon.jpg');
             background-size: cover;
             background-position: center top;
             background-attachment: fixed; 
@@ -79,13 +80,11 @@
         .logo { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 800; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; }
         .nav-status { font-size: 10px; color: var(--gold-light); letter-spacing: 2px; text-transform: uppercase; border: 1px solid var(--border-glass); padding: 5px 12px; border-radius: 20px; }
 
-        /* 3. HERO HEADER (Seamless background without black box) */
+        /* 3. HERO HEADER (Seamless on single background) */
         header { 
-            min-height: 56vh; display: flex; flex-direction: column; justify-content: center; align-items: center; 
-            text-align: center; padding: 65px 20px 45px; position: relative;
-            background: linear-gradient(180deg, rgba(7,7,9,0.65) 0%, rgba(7,7,9,0.88) 100%), url('swan.jpg'), url('swan.jpg.jpg');
-            background-size: cover; background-position: center;
-            border-bottom: 1px solid var(--border-glass);
+            min-height: 48vh; display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            text-align: center; padding: 50px 20px 30px; position: relative;
+            background: transparent;
         }
         .hero-badge { 
             display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; 
@@ -106,7 +105,7 @@
         .highlight { color: var(--gold); font-weight: 700; text-transform: uppercase; }
 
         /* 4. THEME CATALOG GRID */
-        .catalog-container { max-width: 1220px; margin: 35px auto 50px; padding: 0 16px; }
+        .catalog-container { max-width: 1220px; margin: 30px auto 50px; padding: 0 16px; }
         .catalog-title { text-align: center; margin-bottom: 30px; }
         .catalog-title h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: clamp(1.6rem, 4.5vw, 2.3rem); letter-spacing: 2px; }
         .catalog-title p { color: var(--text-muted); font-size: 13px; margin-top: 6px; }
@@ -178,11 +177,10 @@
             color: var(--gold); 
         }
 
-        /* 5. REGISTRATION FORM */
+        /* 5. REGISTRATION FORM (Pure frosted glass on single background) */
         .main-container { 
             max-width: 720px; margin: 40px auto 75px; 
-            background: linear-gradient(180deg, rgba(16, 15, 22, 0.94) 0%, rgba(10, 9, 14, 0.98) 100%), url('castle.jpg'), url('castle.jpg.jpg');
-            background-size: cover; background-position: center;
+            background: rgba(14, 13, 18, 0.88);
             padding: 40px 30px; border-radius: 28px; border: 1px solid var(--border-glass); 
             width: 92%; backdrop-filter: blur(25px); box-shadow: 0 30px 60px rgba(0,0,0,0.75);
         }
@@ -287,7 +285,7 @@
             <!-- 1. Swan Wings Image -->
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Swan & Angel Wings">
-                <img src="swan.jpg" alt="Swan Wings Theme" onerror="this.onerror=null; this.src='swan.jpg.jpg';">
+                <img src="swan.jpg.jpg" alt="Swan Wings Theme" onerror="this.onerror=null; this.src='swan.jpg';">
                 <div class="card-scrim"></div>
                 <div class="card-content">
                     <span class="card-title">Swan & Angel Wings</span>
@@ -298,7 +296,7 @@
             <!-- 2. Joanna Fairy Castle Image -->
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Princess Fairy Castle">
-                <img src="castle.jpg" alt="Princess Theme" onerror="this.onerror=null; this.src='castle.jpg.jpg';">
+                <img src="castle.jpg.jpg" alt="Princess Theme" onerror="this.onerror=null; this.src='castle.jpg';">
                 <div class="card-scrim"></div>
                 <div class="card-content">
                     <span class="card-title">Fairy Castle</span>
@@ -309,7 +307,7 @@
             <!-- 3. Aarav Balloon Stage Image -->
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Hot Air Balloon Sky">
-                <img src="balloon.jpg" alt="Balloon Theme" onerror="this.onerror=null; this.src='balloon.jpg.jpg';">
+                <img src="balloon.jpg.jpg" alt="Balloon Theme" onerror="this.onerror=null; this.src='balloon.jpg';">
                 <div class="card-scrim"></div>
                 <div class="card-content">
                     <span class="card-title">Balloon Sky Vista</span>
@@ -320,7 +318,7 @@
             <!-- 4. Surya Dev Candyland Image -->
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Candyland Carnival">
-                <img src="candyland.jpg" alt="Candyland Theme" onerror="this.onerror=null; this.src='candyland.jpg.jpg';">
+                <img src="candyland.jpg.jpg" alt="Candyland Theme" onerror="this.onerror=null; this.src='candyland.jpg';">
                 <div class="card-scrim"></div>
                 <div class="card-content">
                     <span class="card-title">Candyland Carnival</span>
@@ -332,9 +330,9 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Aaradhya Butterfly Forest Gala">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="aaradhya.mp4" type="video/mp4">
-                    <source src="aaradhya-butterfly.mp4" type="video/mp4">
                     <source src="aaradhya-butterfly.mp4.mp4" type="video/mp4">
+                    <source src="aaradhya-butterfly.mp4" type="video/mp4">
+                    <source src="aaradhya.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -347,9 +345,10 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Surya Dev Candyland Gala">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="candyland.mp4" type="video/mp4">
-                    <source src="candyland-video.mp4" type="video/mp4">
+                    <source src="candyland-video.mp4.mov" type="video/quicktime">
                     <source src="candyland-video.mp4.mov" type="video/mp4">
+                    <source src="candyland-video.mp4" type="video/mp4">
+                    <source src="candyland.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -362,9 +361,10 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Aarav Balloon Stage">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="balloon.mp4" type="video/mp4">
-                    <source src="balloon-video.mp4" type="video/mp4">
+                    <source src="balloon-video.mp4.mov" type="video/quicktime">
                     <source src="balloon-video.mp4.mov" type="video/mp4">
+                    <source src="balloon-video.mp4" type="video/mp4">
+                    <source src="balloon.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -377,9 +377,10 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Michael Grand Carnival">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="carnival.mp4" type="video/mp4">
-                    <source src="carnival-video.mp4" type="video/mp4">
+                    <source src="carnival-video.mp4.mov" type="video/quicktime">
                     <source src="carnival-video.mp4.mov" type="video/mp4">
+                    <source src="carnival-video.mp4" type="video/mp4">
+                    <source src="carnival.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -392,9 +393,10 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Mihira Butterfly Wonderland">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="butterfly.mp4" type="video/mp4">
-                    <source src="butterfly-video.mp4" type="video/mp4">
+                    <source src="butterfly-video.mp4.mov" type="video/quicktime">
                     <source src="butterfly-video.mp4.mov" type="video/mp4">
+                    <source src="butterfly-video.mp4" type="video/mp4">
+                    <source src="butterfly.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -407,9 +409,10 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Jaivik Jungle Waterfall">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="jungle.mp4" type="video/mp4">
-                    <source src="jungle-video.mp4" type="video/mp4">
+                    <source src="jungle-video.mp4.mov" type="video/quicktime">
                     <source src="jungle-video.mp4.mov" type="video/mp4">
+                    <source src="jungle-video.mp4" type="video/mp4">
+                    <source src="jungle.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
