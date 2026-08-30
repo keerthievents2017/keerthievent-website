@@ -25,7 +25,7 @@
             --gold-glow: rgba(212, 175, 55, 0.45);
             --border-glass: rgba(212, 175, 55, 0.35);
             --text-main: #f5f5f7;
-            --text-muted: #c0c0d0;
+            --text-muted: #e2e2ec;
             --whatsapp: #25D366; 
             --insta: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
         }
@@ -79,7 +79,7 @@
         .logo { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 800; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; }
         .nav-status { font-size: 10px; color: var(--gold-light); letter-spacing: 2px; text-transform: uppercase; border: 1px solid var(--border-glass); padding: 5px 12px; border-radius: 20px; }
 
-        /* 3. HERO HEADER */
+        /* 3. HERO HEADER (Seamless background without black box) */
         header { 
             min-height: 56vh; display: flex; flex-direction: column; justify-content: center; align-items: center; 
             text-align: center; padding: 65px 20px 45px; position: relative;
@@ -90,7 +90,7 @@
         .hero-badge { 
             display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; 
             color: var(--gold); margin-bottom: 14px; border: 1px solid var(--border-glass);
-            padding: 6px 16px; border-radius: 30px; background: rgba(0, 0, 0, 0.6); font-weight: 600;
+            padding: 6px 16px; border-radius: 30px; background: rgba(0, 0, 0, 0.4); font-weight: 600;
             backdrop-filter: blur(8px);
         }
         header h1 { 
@@ -99,9 +99,9 @@
             text-shadow: 0 4px 20px rgba(0,0,0,0.9);
         }
         .brand-story { 
-            max-width: 840px; font-size: 14px; line-height: 1.8; color: var(--text-muted); 
-            margin: 0 auto; font-weight: 400; background: rgba(7, 7, 9, 0.65); padding: 18px 24px; 
-            border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px);
+            max-width: 840px; font-size: 15px; line-height: 1.85; color: var(--text-muted); 
+            margin: 0 auto; font-weight: 400; background: transparent; padding: 10px 15px; 
+            border: none; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
         }
         .highlight { color: var(--gold); font-weight: 700; text-transform: uppercase; }
 
