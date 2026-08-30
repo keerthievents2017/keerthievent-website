@@ -12,7 +12,7 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -32,7 +32,7 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
 
-        /* SINGLE LUXURY BACKGROUND */
+        /* SINGLE GLOBAL LUXURY BACKGROUND */
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: var(--dark);
@@ -122,7 +122,7 @@
             border: 1px solid var(--border-glass); 
             cursor: pointer; 
             background: #111016; 
-            height: 255px;
+            height: 260px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -329,9 +329,9 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Aaradhya Butterfly Forest Gala">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="aaradhya-butterfly.mp4.mp4">
-                    <source src="aaradhya-butterfly.mp4" type="video/mp4">
                     <source src="aaradhya.mp4" type="video/mp4">
+                    <source src="aaradhya-butterfly.mp4" type="video/mp4">
+                    <source src="aaradhya-butterfly.mp4.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -344,9 +344,9 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Surya Dev Candyland Gala">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="candyland-video.mp4.mov">
-                    <source src="candyland-video.mp4" type="video/mp4">
                     <source src="candyland.mp4" type="video/mp4">
+                    <source src="candyland-video.mp4" type="video/mp4">
+                    <source src="candyland-video.mp4.mov" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -359,9 +359,9 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Aarav Balloon Stage">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="balloon-video.mp4.mov">
-                    <source src="balloon-video.mp4" type="video/mp4">
                     <source src="balloon.mp4" type="video/mp4">
+                    <source src="balloon-video.mp4" type="video/mp4">
+                    <source src="balloon-video.mp4.mov" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -374,9 +374,9 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Michael Grand Carnival">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="carnival-video.mp4.mov">
-                    <source src="carnival-video.mp4" type="video/mp4">
                     <source src="carnival.mp4" type="video/mp4">
+                    <source src="carnival-video.mp4" type="video/mp4">
+                    <source src="carnival-video.mp4.mov" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -389,9 +389,9 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Mihira Butterfly Wonderland">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="butterfly-video.mp4.mov">
-                    <source src="butterfly-video.mp4" type="video/mp4">
                     <source src="butterfly.mp4" type="video/mp4">
+                    <source src="butterfly-video.mp4" type="video/mp4">
+                    <source src="butterfly-video.mp4.mov" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -404,9 +404,9 @@
             <label class="catalog-item">
                 <input type="checkbox" name="data[Custom_Theme]" value="Jaivik Jungle Waterfall">
                 <video autoplay muted loop playsinline preload="auto">
-                    <source src="jungle-video.mp4.mov">
-                    <source src="jungle-video.mp4" type="video/mp4">
                     <source src="jungle.mp4" type="video/mp4">
+                    <source src="jungle-video.mp4" type="video/mp4">
+                    <source src="jungle-video.mp4.mov" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -461,7 +461,6 @@
 
 <!-- SCRIPTS -->
 <script>
-    // Force silent autoplay on all modern mobile and desktop browsers
     document.addEventListener('DOMContentLoaded', () => {
         const videos = document.querySelectorAll('video');
         videos.forEach(v => {
@@ -472,14 +471,11 @@
             
             const playPromise = v.play();
             if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    // Browser policy handled silently
-                });
+                playPromise.catch(() => {});
             }
         });
     });
 
-    // Instagram Popup Timer
     window.onload = function() { 
         setTimeout(() => { 
             document.getElementById('overlay').classList.add('active'); 
@@ -492,7 +488,6 @@
         document.getElementById('overlay').classList.remove('active'); 
     }
 
-    // Smooth SheetDB submission
     document.getElementById('regForm').addEventListener('submit', function(e) {
         e.preventDefault(); 
         
