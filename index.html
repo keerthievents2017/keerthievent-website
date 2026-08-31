@@ -18,7 +18,7 @@
     <style>
         :root { 
             --dark: #070709;
-            --card-bg: rgba(14, 13, 18, 0.92);
+            --card-bg: rgba(18, 17, 24, 0.95);
             --gold: #D4AF37; 
             --gold-light: #faecd0;
             --gold-gradient: linear-gradient(135deg, #faecd0 0%, #d4af37 50%, #997523 100%);
@@ -32,12 +32,12 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
 
-        /* SINGLE LUXURY BACKGROUND */
+        /* SINGLE GLOBAL LUXURY BACKGROUND */
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: var(--dark);
             background-image: 
-                linear-gradient(180deg, rgba(7, 7, 9, 0.82) 0%, rgba(10, 9, 14, 0.88) 40%, rgba(7, 7, 9, 0.95) 100%),
+                linear-gradient(180deg, rgba(7, 7, 9, 0.85) 0%, rgba(10, 9, 14, 0.90) 40%, rgba(7, 7, 9, 0.96) 100%),
                 url('balloon.jpg.jpg'), url('balloon.jpg');
             background-size: cover;
             background-position: center top;
@@ -142,6 +142,13 @@
         }
         .catalog-item:hover img, .catalog-item:hover video { transform: scale(1.06); }
         
+        .card-badge {
+            position: absolute; top: 14px; right: 14px; z-index: 4;
+            font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            padding: 4px 10px; border-radius: 12px; background: rgba(0,0,0,0.65);
+            border: 1px solid var(--border-glass); color: var(--gold); backdrop-filter: blur(6px);
+        }
+
         .card-scrim {
             position: absolute; inset: 0; z-index: 2;
             background: linear-gradient(180deg, rgba(7,7,9,0.02) 0%, rgba(7,7,9,0.45) 55%, rgba(7,7,9,0.96) 100%);
@@ -272,7 +279,7 @@
     </p>
 </header>
 
-<!-- THEME CATALOG (10 DISTINCT VISUALS) -->
+<!-- THEME CATALOG (10 EXCLUSIVE EVENTS) -->
 <form id="regForm" action="https://sheetdb.io/api/v1/l06xavka0btnf" method="POST">
     
     <div class="catalog-container">
@@ -284,6 +291,7 @@
         <div class="catalog-grid">
             <!-- 1. Swan Wings Image -->
             <label class="catalog-item">
+                <span class="card-badge">Photo Setup</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Swan & Angel Wings">
                 <img src="swan.jpg.jpg" alt="Swan Wings Theme" onerror="this.onerror=null; this.src='swan.jpg';">
                 <div class="card-scrim"></div>
@@ -295,6 +303,7 @@
 
             <!-- 2. Joanna Fairy Castle Image -->
             <label class="catalog-item">
+                <span class="card-badge">Photo Setup</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Princess Fairy Castle">
                 <img src="castle.jpg.jpg" alt="Princess Theme" onerror="this.onerror=null; this.src='castle.jpg';">
                 <div class="card-scrim"></div>
@@ -306,6 +315,7 @@
 
             <!-- 3. Aarav Hot Air Balloon Stage Image -->
             <label class="catalog-item">
+                <span class="card-badge">Photo Setup</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Hot Air Balloon Sky">
                 <img src="balloon.jpg.jpg" alt="Balloon Theme" onerror="this.onerror=null; this.src='balloon.jpg';">
                 <div class="card-scrim"></div>
@@ -317,6 +327,7 @@
 
             <!-- 4. Surya Dev Candyland Image -->
             <label class="catalog-item">
+                <span class="card-badge">Photo Setup</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Candyland Carnival">
                 <img src="candyland.jpg.jpg" alt="Candyland Theme" onerror="this.onerror=null; this.src='candyland.jpg';">
                 <div class="card-scrim"></div>
@@ -326,11 +337,13 @@
                 </div>
             </label>
 
-            <!-- 5. Aaradhya Butterfly Forest Gala Video -->
+            <!-- 5. Aaradhya Butterfly Forest Video -->
             <label class="catalog-item">
+                <span class="card-badge">Live Reel</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Aaradhya Butterfly Forest Gala">
-                <video autoplay muted loop playsinline poster="swan.jpg.jpg" preload="metadata">
+                <video autoplay muted loop playsinline preload="auto">
                     <source src="aaradhya-butterfly.mp4.mp4" type="video/mp4">
+                    <source src="aaradhya-butterfly.mp4" type="video/mp4">
                     <source src="aaradhya.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
@@ -342,10 +355,13 @@
 
             <!-- 6. Surya Dev Candyland Video -->
             <label class="catalog-item">
+                <span class="card-badge">Live Reel</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Surya Dev Candyland Gala">
-                <video autoplay muted loop playsinline poster="candyland.jpg.jpg" preload="metadata">
-                    <source src="candyland.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="candyland-video.mp4.mov" type="video/quicktime">
                     <source src="candyland-video.mp4.mov" type="video/mp4">
+                    <source src="candyland-video.mp4" type="video/mp4">
+                    <source src="candyland.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -356,10 +372,13 @@
 
             <!-- 7. Aarav Teddy Balloon Stage Video -->
             <label class="catalog-item">
+                <span class="card-badge">Live Reel</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Aarav Balloon Stage">
-                <video autoplay muted loop playsinline poster="balloon.jpg.jpg" preload="metadata">
-                    <source src="balloon.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="balloon-video.mp4.mov" type="video/quicktime">
                     <source src="balloon-video.mp4.mov" type="video/mp4">
+                    <source src="balloon-video.mp4" type="video/mp4">
+                    <source src="balloon.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -370,10 +389,13 @@
 
             <!-- 8. Michael Grand Carnival Video -->
             <label class="catalog-item">
+                <span class="card-badge">Live Reel</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Michael Grand Carnival">
-                <video autoplay muted loop playsinline poster="castle.jpg.jpg" preload="metadata">
-                    <source src="carnival.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="carnival-video.mp4.mov" type="video/quicktime">
                     <source src="carnival-video.mp4.mov" type="video/mp4">
+                    <source src="carnival-video.mp4" type="video/mp4">
+                    <source src="carnival.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -384,10 +406,13 @@
 
             <!-- 9. Mihira Butterfly Wonderland Video -->
             <label class="catalog-item">
+                <span class="card-badge">Live Reel</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Mihira Butterfly Wonderland">
-                <video autoplay muted loop playsinline poster="swan.jpg.jpg" preload="metadata">
-                    <source src="butterfly.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="butterfly-video.mp4.mov" type="video/quicktime">
                     <source src="butterfly-video.mp4.mov" type="video/mp4">
+                    <source src="butterfly-video.mp4" type="video/mp4">
+                    <source src="butterfly.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
@@ -398,10 +423,13 @@
 
             <!-- 10. Jaivik Jungle Waterfall Video -->
             <label class="catalog-item">
+                <span class="card-badge">Live Reel</span>
                 <input type="checkbox" name="data[Custom_Theme]" value="Jaivik Jungle Waterfall">
-                <video autoplay muted loop playsinline poster="balloon.jpg.jpg" preload="metadata">
-                    <source src="jungle.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="jungle-video.mp4.mov" type="video/quicktime">
                     <source src="jungle-video.mp4.mov" type="video/mp4">
+                    <source src="jungle-video.mp4" type="video/mp4">
+                    <source src="jungle.mp4" type="video/mp4">
                 </video>
                 <div class="card-scrim"></div>
                 <div class="card-content">
